@@ -1,0 +1,11 @@
+{
+  "name": "test-api",
+  "version": "1.0.0",
+  "description": "This is test",
+  "main": "index.js",
+  "author": "razzkumar",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
