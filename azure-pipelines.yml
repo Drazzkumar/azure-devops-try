@@ -19,12 +19,14 @@ steps:
   name: test
   displayName: "Download conf file"
   inputs:
-    secureFile: '$(Build.SourceBranchName).conf'
+    secureFile: 'Web.$(Build.SourceBranchName).conf'
   
 - script: |
     echo "$(test.secureFilePath)"
+    mkdir abc
     cat $(test.secureFilePath)
     ls $(test.secureFilePath)
-    npm install
+    mv $(test.secureFilePath) $(System.DefaultWorkingDirectory)/abc/Web.config
+    ls $(System.DefaultWorkingDirectory)/abc
     # node index.js
   displayName: 'npm install and build'
