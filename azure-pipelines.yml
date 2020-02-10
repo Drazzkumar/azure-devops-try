@@ -17,9 +17,10 @@ steps:
 
 - task: DownloadSecureFile@1
   name: test
-  displayName: "Download conf file file"
+  displayName: "Download conf file"
   inputs:
     secureFile: 'test.conf'
+  
 - script: |
     echo "$(test.secureFilePath)"
     cat $(test.secureFilePath)
