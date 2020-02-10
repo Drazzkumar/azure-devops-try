@@ -19,12 +19,12 @@ steps:
   name: test
   displayName: "Download conf file"
   inputs:
-    secureFile: 'test.conf'
+    secureFile: '$(Build.SourceBranchName).conf'
   
 - script: |
     echo "$(test.secureFilePath)"
     cat $(test.secureFilePath)
     ls $(test.secureFilePath)
     npm install
-    node index.js
+    # node index.js
   displayName: 'npm install and build'
